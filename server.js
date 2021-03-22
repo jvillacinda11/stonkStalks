@@ -3,14 +3,16 @@
 const express = require('express')
 // import sequelize connection
 const { join } = require('path')     
-const sequelize = require('./config/connection.js')    
+const sequelize = require('./config/connection.js') 
+
+require('./models')  
 
 const app = express()
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-app.use(require('./routes'))
+//app.use(require('./routes'))
 
 // sync sequelize models to the database, then turn on the server
 require('./config/connection.js')

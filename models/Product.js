@@ -31,17 +31,9 @@ Product.init({
     validate: {
       isNumeric: true,
     },
-  },
-  category_id: {
-    type: DataTypes.INTEGER,
-    references: {
-      model: 'category',
-      key: 'id'
-    }
   }
-
 },
 
-}, { sequelize, modelName: 'Products' })
+ { sequelize, modelName: 'Products' })
 
 module.exports = Product
