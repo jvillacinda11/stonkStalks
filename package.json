@@ -19,6 +19,8 @@
   "homepage": "https://github.com/jvillacinda11/stonkStalks#readme",
   "dependencies": {
     "mysql2": "^2.2.5",
+    "passport": "^0.4.1",
+    "passport-local-sequelize": "^0.9.0",
     "sequelize": "^6.6.1"
   }
 }
