@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express')
 const { join } = require('path')
 const passport = require('passport')
@@ -10,6 +12,8 @@ app.use(express.json)
 
 app.use(passport.initialize())
 app.use(passport.session())
+
+app.use(require('./routes'))
 
 require('./db').sync()
 .then(() => app.listen(process.env.PORT || 3000))
