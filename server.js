@@ -3,6 +3,7 @@ const express = require('express')
 // import sequelize connection
 const { join } = require('path')     
 const sequelize = require('./config/connection.js') 
+const passport = require('passport')
 
 require('./models')  
 
