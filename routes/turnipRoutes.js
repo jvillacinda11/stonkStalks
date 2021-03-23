@@ -3,8 +3,8 @@ const { User } = require('../models')
 const passport = require('passport')
 const jwt = require('jsonwebtoken')
 
-router.get('/turnips/auth', (req, res) => {
-  res.json(req.body)
+router.get('/turnips/test', (req, res) => {
+  console.log('Turnip test is working!')
 })
 
 module.exports = router
