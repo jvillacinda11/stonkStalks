@@ -1,4 +1,4 @@
-cons pls = require('passport-local-sequelize')
+const pls = require('passport-local-sequelize')
 const { Model, DataTypes } = require('sequelize')
 const sequelize = require('../config/connection.js')
 
