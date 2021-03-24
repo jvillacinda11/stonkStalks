@@ -28,38 +28,38 @@
       <form action="#">
         <div class="input-row login-input">
           <div class="input-label">Username</div>
-          <input name="username" type="text" value>
+          <input id="username" type="text"  name="username" value>
         </div>
         <div class="input-row login-input">
           <div class="input-label">Password</div>
-          <input name="password" type="password" value>
+          <input id="password" type="password" name="password" value>
         </div>
         <div class="input-row login-input">
           <div class="input-label">Re-enter Password</div>
-          <input name="password2" type="password" value>
+          <input id="password2" type="password" name="password2" value>
         </div>
         <div class="input-row login-input">
           <div class="input-label">Birthday</div>
-          <input name="birthday" type="date" value>
+          <input id="birthday" type="date" name="birthday" value>
         </div>
         <div class="input-row login-input">
           <div class="input-label">Your Villager's Name</div>
-          <input name="villager_name" type="input-label" value>
+          <input id="villager_name" type="input-label" name="villager_name" value>
         </div>
         <div class="input-row login-input">
           <div class="input-label">Island Name</div>
-          <input name="island_name" type="input-label" value>
+          <input id="island_name" type="input-label" name="island_name" value>
         </div>
         <div class="input-row login-input">
           <div class="input-label">Email</div>
-          <input name="email" type="email" value>
+          <input id="email" type="email" name="email" value>
         </div>
         <div class="input-row login-input">
           <div class="input-label">Friend Code</div>
-          <input name="friend_code" placeholder="ex. XXXX-XXXX-XXXX" type="text" value>
+          <input id="friend_code" placeholder="ex. XXXX-XXXX-XXXX" type="text" name="friend_code" value>
         </div>
         <div class="login-btn-bar">
-          <button type="submit">Register</button>
+          <button type="submit" id= "register">Register</button>
         </div>
       </form>
     </div>
@@ -69,5 +69,56 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+
+ 
+  
+ const validate = () => {
+
+
+    if (username == '' || password == '' || password2 == '' || villager_name == '' || island_name == '' || email == '' || friend_code == ''){
+      alert('Please fill out all fields!')
+
+    
+  } 
+  else{
+       if (document.getElementById('password').value === document.getElementById('password2').value) {
+
+       alert('Success!')
+       // axios.post('', {
+       //   username: document.getElementById('username').value,
+       //   password: document.getElementById('password').value,
+       //   bithday: document.getElementById('birthday').value,
+       //   villageName: document.getElementById('villager_name').value,
+       //   islandName: document.getElementById('island_name').value,
+       //   email: document.getElementById('email').value,
+       //   friendCode: document.getElementById('friend_code')
+       // })
+
+       //   .then(() => window.location = '/login')
+       //   .catch(err => console.error(err))
+     }
+     else {
+       alert('Passwords do not match!')
+     }
+  }
+ }
+
+      document.getElementById('register').addEventListener('click', event => {
+        event.preventDefault() 
+        let username = document.getElementById('username').value
+        let password = document.getElementById('password').value
+        let password2 = document.getElementById('password2').value
+        let villager_name = document.getElementById('villager_name').value
+        let island_name = document.getElementById('island_name').value
+        let email =  document.getElementById('email').value
+        let friend_code = document.getElementById('friend_code').value
+        validate()
+      })
+    
+
+
+</script>
 </body>
 </html>
