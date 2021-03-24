@@ -7,7 +7,7 @@ router.get('/users/auth',  (req, res) => {
   res.sendStatus(200)
 })
 
-router.post('/users/register', (req, res) => {
+router.post('users/register/', (req, res) => {
   const { username, islandName } = req.body
   User.register(new User({ username, islandName, isOpen: false }), req.body.password, err => {
     if (err) { console.log(err) }
