@@ -1,11 +1,13 @@
+// import models
 const User = require('./User.js')
-const Product = require('./Product.js')
-const Category = require('./Category')
-
-User.hasMany(Product)
-Product.belongsTo(User)
-Category.hasMany(Product, { foreignKey: 'categoryId' })
+const Product = require('./Turnip')
 
 
 
-module.exports = { User, Product, Category }
+User.hasMany(Product, { foreignKey: 'uid' })
+Product.belongsTo(User, { foreignKey: 'uid' })
+
+module.exports = {
+  User,
+  Product
+}
