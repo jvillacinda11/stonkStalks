@@ -8,8 +8,8 @@ router.get('/users/auth', (req, res) => {
 })
 
 router.post('/users/register', (req, res) => {
-  const { villagerName='sam', email='sam12@gmail.com', password = '123',birthday=Date.now(), islandName='Hawaii', friendCode='12', isOpen=false, username } = req.body
-  //const { villagerName, email, birthday, islandName, friendCode, isOpen, username } = req.body
+ // const { villagerName='sam', email='sam12@gmail.com', password = '123',birthday=Date.now(), islandName='Hawaii', friendCode='12', isOpen=false, username } = req.//body
+  const { villagerName, email, birthday, islandName, friendCode, isOpen, username } = req.body
   User.register(new User({ villagerName, email, password, birthday, islandName, friendCode, isOpen, username }), req.body.password, err => {
     if (err) { console.log(err) }
     res.sendStatus(200)
