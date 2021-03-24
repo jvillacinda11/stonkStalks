@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&family=Rubik:wght@600&display=swap');
+
+.container {
+  display: grid;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.nav-container {
+  text-align: center;
+}
+.col-6 {
+  text-align: center;
+}
+.container {
+  text-align: center;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  background-color: powderblue;
+}
+
+h1 {
+  font-family: 'Patua One', cursive;
+  color: rgb(70, 65, 41);
+  font-size: 300%;
+}
