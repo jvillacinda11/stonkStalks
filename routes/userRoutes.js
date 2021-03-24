@@ -8,8 +8,8 @@ router.get('/users/auth',  (req, res) => {
 })
 
 router.post('/users/register', (req, res) => {
-  const { username, islandName } = req.body
-  User.register(new User({ username, islandName, isOpen: false }), req.body.password, err => {
+  const { username, birthday, villagerName, islandName, email, friendCode } = req.body
+  User.register(new User({ username, birthday, villagerName, islandName, email, friendCode, isOpen: false }), req.body.password, err => {
     if (err) { console.log(err) }
     res.sendStatus(200)
   })
