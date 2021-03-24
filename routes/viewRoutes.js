@@ -12,12 +12,16 @@ router.get('/register', (req, res) => {
   res.sendFile(join(__dirname, '..', 'public', 'register.html'))
 })
 
-router.get('/loading', (req, res) => {
-  res.sendFile(join(__dirname, '..', 'public', 'loading.html'))
-})
+// router.get('/loading', (req, res) => {
+//   res.sendFile(join(__dirname, '..', 'public', 'loading.html'))
+// })
 
 router.get('/*', (req, res) => {
-  res.sendFile(join(__dirname, '..', 'public', 'index.html'))
-})
+  res.sendFile(join(__dirname, '..', 'public', 'index.html'))})
+
+
+
+
+
 
 module.exports = router
