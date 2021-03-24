@@ -86,18 +86,20 @@
        if (document.getElementById('password').value === document.getElementById('password2').value) {
 
        alert('Success!')
-       // axios.post('', {
-       //   username: document.getElementById('username').value,
-       //   password: document.getElementById('password').value,
-       //   bithday: document.getElementById('birthday').value,
-       //   villageName: document.getElementById('villager_name').value,
-       //   islandName: document.getElementById('island_name').value,
-       //   email: document.getElementById('email').value,
-       //   friendCode: document.getElementById('friend_code')
-       // })
 
-       //   .then(() => window.location = '/login')
-       //   .catch(err => console.error(err))
+                                //NEEDS ROUTE IN ''
+       axios.post('', {
+         username: document.getElementById('username').value,
+         password: document.getElementById('password').value,
+         bithday: document.getElementById('birthday').value,
+         villageName: document.getElementById('villager_name').value,
+         islandName: document.getElementById('island_name').value,
+         email: document.getElementById('email').value,
+         friendCode: document.getElementById('friend_code')
+       })
+                                //NEEDS ROUTE IN ''
+         .then(() => window.location = '')
+         .catch(err => console.error(err))
      }
      else {
        alert('Passwords do not match!')
