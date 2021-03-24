@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
@@ -76,7 +80,7 @@
  const validate = () => {
 
 
-    if (username == '' || password == '' || password2 == '' || villager_name == '' || island_name == '' || email == '' || friend_code == ''){
+    if (username == '' || password == '' || password2 == '' || villager_name == '' || island_name == '' || email == '' || friend_code == '' || birthday == ''){
       alert('Please fill out all fields!')
 
     
@@ -86,8 +90,8 @@
 
        alert('Success!')
 
-                                //NEEDS ROUTE IN ''
-       axios.post('user/register/', {
+
+       axios.post('/api/users/register', {
          villageName: document.getElementById('villager_name').value,         
          email: document.getElementById('email').value,
          password: document.getElementById('password').value,
@@ -98,8 +102,10 @@
          username: document.getElementById('username').value
 
        })
-                                //NEEDS ROUTE IN ''
-         .then(() => window.location = '')
+         .then(data => {
+           console.log(data)
+          //  window.location = '/login'
+        })
          .catch(err => console.error(err))
      }
      else {
@@ -109,7 +115,7 @@
  }
 
       document.getElementById('register').addEventListener('click', event => {
-        event.preventDefault() 
+        event.preventDefault()
         let username = document.getElementById('username').value
         let password = document.getElementById('password').value
         let password2 = document.getElementById('password2').value
@@ -117,6 +123,7 @@
         let island_name = document.getElementById('island_name').value
         let email =  document.getElementById('email').value
         let friend_code = document.getElementById('friend_code').value
+        let birthday = document.getElementById('birthday').value
         validate()
       })
     
