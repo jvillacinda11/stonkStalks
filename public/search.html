@@ -26,12 +26,29 @@
       </div>
     </div>
   </div> -->
-  <div style="display: flex; align-items: center; justify-content: center;">
-    <div class="nav-login-btns">
-      <a class="loginPath" href="/login" style="margin-right: 10px;">Log In</a>
-      <a class="signup" href="/register">Sign Up</a>
+  <nav class="navbar navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="./images/turnip.png" alt="turnip" width="30" height="24"
+          class="d-inline-block align-text-top">
+        Stonk Stalks
+      </a>
+          <div id="no-account-nav">
+            <a class="loginPath" href="/login" style="margin-right: 10px;">Log In</a>
+            <button class="button">
+              <a class="signup" href="/register" style="color: white;">Sign Up</a>
+            </button>
+          </div>
+
+          <!-- IF USER IS LOGGED IN -->
+          <!-- <div id= "has-account-nav">
+            <button class="button">
+              <a class="logout" href="/register" style="color: white;">Log Out</a>
+            </button>
+          </div> -->
+
     </div>
-  </div>
+  </nav>
 
   <!-- BODY -->
 <div id="search-nav" class="col-m3">
