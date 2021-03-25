@@ -3,7 +3,7 @@ const { User } = require('../models')
 const passport = require('passport')
 const jwt = require('jsonwebtoken')
 
-router.get('/users/auth',  (req, res) => {
+router.get('/users/auth', (req, res) => {
   res.sendStatus(200)
 })
 
@@ -13,7 +13,9 @@ router.post('/users/register', (req, res) => {
     if (err) { console.log(err) }
     res.sendStatus(200)
   })
+
 })
+
 
 router.post('/users/login', (req, res) => {
   User.authenticate()(req.body.username, req.body.password, (err, user) => {
