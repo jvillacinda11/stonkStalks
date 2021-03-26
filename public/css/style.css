@@ -27,3 +27,44 @@ h1 {
   color: rgb(70, 65, 41);
   font-size: 300%;
 }
+
+/* shweta changes below */
+
+#stepone {
+  width: 636px;
+}
+
+#aligncheck {
+  margin-right: 40px;
+}
+
+#istime {
+  margin-right: 27px;
+}
+
+#turnip_price {
+  margin-left: 30px;
+}
+
+#tellusmore {
+  margin-left: 98px;
+  /* margin-bottom: 30px; */
+}
+
+#steptwo {
+  margin-left: 92px;
+  margin-bottom: 60px;
+}
+
+#stepthree {
+  margin-left: 73px;
+}
+
+#stepfour {
+  width: 636px;
+  margin-left: 10px;
+}
+
+#secaligncheck {
+  margin-right: 63px;
+}
