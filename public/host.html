@@ -41,7 +41,93 @@
   </nav>
 
   <!-- BODY -->
+  <div class="container">
+    <h1>stonk stalks</h1>
+    <div class="container-fluid-sm">
+      <div class="row">
+        <div id="FirstStep" class="col-6">
 
+          <h6>Host Your Island:Step 1/?</h6>
+          <label for="DodoCode">Dodo Code:</label>
+          <input id="DodoCode" type="DodoCode">
+          <p id="stepone">
+            <!-- <input id="Save1" class="btn btn-primary" type="button" value="Save"> -->
+            <input id="Next1" class="btn btn-primary" type="button" value="Next">
+
+          </p>
+
+
+        </div>
+        <div id="SecondStep" class="col-6">
+          <h6>Host Your Island:Step 2/?</h6>
+          <p id="turnip_price">
+            <label for="TurnipPrice">Turnip Price:</label>
+            <input id= "TurnipPrice" type="TurnipPrice">
+          </p>
+          <!-- <p id="aligncheck">
+            <label for="checkbox">Is Daisy Mae selling turnips?</label>
+            <input type="checkbox" value="" aria-label="Checkbox for following text input">
+          </p> -->
+          <p id="istime">
+            <label for="eventTime">Time on your island?</label>
+            <input id="eventTime" type="eventTime">
+          </p>
+
+          <!-- <p>Tell us more:</p>
+          <textarea id="tellusmore"></textarea> -->
+
+          <p id="steptwo">
+            <!-- <input id="Save2" class="btn btn-primary" type="button" value="Save">
+            <input id="Back2" class="btn btn-primary" type="button" value="Back"> -->
+            <input id="Next2" class="btn btn-primary" type="button" value="Next">
+          </p>
+
+        </div>
+
+      </div>
+      <div class="row">
+
+        <div id="ThirdStep" class="col-6">
+          <h6>Host Your Island:Step 3/?</h6>
+          <label for="Discord">Discord:</label>
+          <input id= "Discord" type="Discord">
+          <p id="stepthree">
+            <!-- <input id="Save3" class="btn btn-primary" type="button" value="Save">
+            <input id="Back3" class="btn btn-primary" type="button" value="Back"> -->
+            <input id="Next3" class="btn btn-primary" type="button" value="Next">
+
+          </p>
+        </div>
+
+
+        <div id="FourthStep" class="col-6">
+          <h6>Host Your Island:Step 4/?</h6>
+          <label for="VisitorLimit">Visitor Limit:</label>
+          <input id= "VisitorLimit" type="VisitorLimit">
+          <p>
+            <label for="QueueLimit">Queue Limit:</label>
+            <input id="QueueLimit" type="QueueLimit">
+          </p>
+          <!-- <p id="secaligncheck">
+            <label for="checkbox">Is Daisy Mae selling turnips?</label>
+            <input type="checkbox" value="" aria-label="Checkbox for following text input">
+          </p> -->
+          <p id="stepfour">
+           
+            <!-- <input id="Back4" class="btn btn-primary" type="button" value="Back"> -->
+            <input id="Next4" class="btn btn-primary" type="button" value="StartOver">
+            <input id="Save4" class="btn btn-primary" type="button" value="Save">
+          </p>
+        </div>
+
+      </div>
+      <!--Might remove later-->
+      <div class="col-md-6">
+        <ul class="list-group" id="turnips"></ul>
+      </div>
+    <!--Might remove later-->
+    </div>
+  </div>
 
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -53,6 +139,68 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+
+   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <script src="./assets/app.js"></script>
+  <script>
+    //Page Loads
+    $(function () {
+      $('#SecondStep, #ThirdStep, #FourthStep')
+        .hide();
+    });
+
+
+
+    document.getElementById("Next1").onclick = function () {
+      document.getElementById("FirstStep").style.display = "none";
+      document.getElementById("SecondStep").style.display = "block";
+    }
+
+
+
+    document.getElementById("Next2").onclick = function () {
+      document.getElementById("SecondStep").style.display = "none";
+      document.getElementById("ThirdStep").style.display = "block";
+    }
+
+
+
+    document.getElementById("Next3").onclick = function () {
+      document.getElementById("ThirdStep").style.display = "none";
+      document.getElementById("FourthStep").style.display = "block";
+    }
+
+
+
+    document.getElementById("Next4").onclick = function () {
+      document.getElementById("FourthStep").style.display = "none";
+      document.getElementById("FirstStep").style.display = "block";
+    }
+
+
+    // document.getElementById("Back4").onclick = function () {
+    //   document.getElementById("FourthStep").style.display = "none";
+    //   document.getElementById("ThirdStep").style.display = "block";
+    // }
+
+    // document.getElementById("Back3").onclick = function () {
+    //   document.getElementById("ThirdStep").style.display = "none";
+    //   document.getElementById("SecondStep").style.display = "block";
+    // }
+
+    // document.getElementById("Back2").onclick = function () {
+    //   document.getElementById("SecondStep").style.display = "none";
+    //   document.getElementById("FirstStep").style.display = "block";
+    // }
+
+
+
+
+
+
+  </script>
+
 </body>
 
 </html>

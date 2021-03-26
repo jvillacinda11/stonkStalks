@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Patua+One&family=Rubik:wght@600&display=swap');
-
 @font-face {
   font-family: 'FinkHeavy';
   src: url('./font/FinkHeavy.woff2') format('woff2'), url('./font/FinkHeavy.woff') format('woff');
@@ -17,6 +16,8 @@ div.container{
   display: grid;
   text-align: center;
   padding: 10px;
+  font-family: FinkHeavy;
+  font-size: x-large;
   margin-top: 5px;
   border-radius: 5px;
 }
@@ -35,11 +36,6 @@ div.container{
   font-size: x-large;
 }
 
-.container {
-  text-align: center;
-  font-size: x-large;
-}
-
 body {
   font-family: 'Rubik', sans-serif;
   font-family: 'FinkHeavy';
@@ -48,7 +44,7 @@ body {
 }
 
 a:link {
-  /* color: rgb(146, 190, 255); */
+  color: rgb(146, 190, 255);
 }
 
 h1 {
@@ -63,9 +59,45 @@ h2 {
   font-weight: bolder;
 }
 
-.container {
-  font-family: FinkHeavy;
-  font-size: x-large;
+/* shweta changes below */
+
+#stepone {
+  width: 636px;
+}
+
+#aligncheck {
+  margin-right: 40px;
+}
+
+#istime {
+  margin-right: 27px;
+}
+
+#turnip_price {
+  margin-left: 30px;
+}
+
+#tellusmore {
+  margin-left: 98px;
+  /* margin-bottom: 30px; */
+}
+
+#steptwo {
+  margin-left: 92px;
+  margin-bottom: 60px;
+}
+
+#stepthree {
+  margin-left: 73px;
+}
+
+#stepfour {
+  width: 636px;
+  margin-left: 10px;
+}
+
+#secaligncheck {
+  margin-right: 63px;
 }
 
 .button {

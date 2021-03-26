@@ -7,16 +7,29 @@ class Turnip extends Model { }
 Turnip.init(
   {
     // define columns
-    turnipPrice: {
+    DodoCode: {
       type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    TurnipPrice: {
+      type: DataTypes.FLOAT,
       allowNull: false
     },
     eventTime: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    Discord: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    VisitorLimit: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    chargeFee: {
-      type: DataTypes.BOOLEAN
+    QueueLimit: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   },
   {
