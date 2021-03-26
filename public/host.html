@@ -47,7 +47,7 @@
       <div class="row">
         <div id="FirstStep" class="col-6">
 
-          <h6>Host Your Island:Step 1/4</h6>
+          <h6>Host Your Island: Step 1/4</h6>
           <label for="DodoCode">Dodo Code:</label>
           <input id="DodoCode" type="text">
           <p id="stepone">
@@ -59,7 +59,7 @@
 
         </div>
         <div id="SecondStep" class="col-6">
-          <h6>Host Your Island:Step 2/4</h6>
+          <h6>Host Your Island: Step 2/4</h6>
           <p id="turnip_price">
             <label for="TurnipPrice">Turnip Price:</label>
             <input id= "TurnipPrice" type="number">
@@ -71,6 +71,7 @@
           <p id="istime">
             <label for="eventTime">Time on your island?</label>
             <input id="eventTime" type="date">
+            <input id="eventTime" type="time">
           </p>
 
           <!-- <p>Tell us more:</p>
@@ -88,7 +89,7 @@
       <div class="row">
 
         <div id="ThirdStep" class="col-6">
-          <h6>Host Your Island:Step 3/4</h6>
+          <h6>Host Your Island: Step 3/4</h6>
           <label for="Discord">Discord:</label>
           <input id= "Discord" type="text">
           <p id="stepthree">
@@ -101,12 +102,12 @@
 
 
         <div id="FourthStep" class="col-6">
-          <h6>Host Your Island:Step 4/4</h6>
+          <h6>Host Your Island: Step 4/4</h6>
           <label for="VisitorLimit">Visitor Limit:</label>
-          <input id= "VisitorLimit" type="VisitorLimit">
+          <input id= "VisitorLimit" type="number" min="1" max="7">
           <p>
             <label for="QueueLimit">Queue Limit:</label>
-            <input id="QueueLimit" type="QueueLimit">
+            <input id="QueueLimit" type="number">
           </p>
           <!-- <p id="secaligncheck">
             <label for="checkbox">Is Daisy Mae selling turnips?</label>
