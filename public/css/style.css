@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Patua+One&family=Rubik:wght@600&display=swap');
 
+@font-face {
+  font-family: 'FinkHeavy';
+  src: url('./font/FinkHeavy.woff2') format('woff2'), url('./font/FinkHeavy.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
 .container {
   display: grid;
   text-align: center;
@@ -10,9 +18,11 @@
 .nav-container {
   text-align: center;
 }
+
 .col-6 {
   text-align: center;
 }
+
 .container {
   text-align: center;
 }
@@ -23,11 +33,18 @@ body {
 }
 
 h1 {
-  font-family: 'Patua One', cursive;
+  font-family: FinkHeavy;
   color: rgb(70, 65, 41);
   font-size: 300%;
+  font-weight: bolder;
 }
 
+h2 {
+  font-family: FinkHeavy;
+  font-weight: bolder;
+}
+
+<<<<<<< HEAD
 /* shweta changes below */
 
 #stepone {
@@ -68,3 +85,9 @@ h1 {
 #secaligncheck {
   margin-right: 63px;
 }
+=======
+.container {
+  font-family: FinkHeavy;
+  font-size: x-large;
+}
+>>>>>>> 369a9991a89a2a2d335dc4916df7bf76872249e0

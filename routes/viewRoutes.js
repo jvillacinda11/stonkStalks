@@ -4,9 +4,6 @@ const passport = require('passport')
 const jwt = require('jsonwebtoken')
 const { join } = require('path')
 
-
-
-
 router.get('/login', (req, res) => {
   res.sendFile(join(__dirname, '..', 'public', 'login.html'))
 })
