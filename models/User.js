@@ -12,7 +12,6 @@ const User = pls.defineUser(sequelize, {
     allowNull: false
   },
   
-  
   birthday: {
     type: DataTypes.DATEONLY,
     allowNull: false

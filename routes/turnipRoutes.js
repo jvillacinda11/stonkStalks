@@ -1,11 +1,11 @@
 const router = require('express').Router()
-const { User } = require('../models')
+const { User, Turnip } = require('../models')
 const passport = require('passport')
 const jwt = require('jsonwebtoken')
 
-router.get('/turnips/test', (req, res) => {
-  console.log('Turnip test is working!')
-})
+// router.get('/turnips/test', (req, res) => {
+//   console.log('Turnip test is working!')
+// })
 
 //GET all turnips
 router.get('/turnips', passport.authenticate('jwt'), (req, res) => {
@@ -22,12 +22,17 @@ router.get('/turnips/:id', passport.authenticate('jwt'), (req, res) => {
 })
 
 //POST one turnip
-router.post('/turnips', passport.authenticate('jwt'), (req, res) => {
+//router.post('/turnips', passport.authenticate('jwt'), (req, res) => {
+router.post('/turnips', (req, res) => {
   Turnip.create({
-    turnipPrice: req.body.turnipPrice,
+    DodoCode: req.body.DodoCode,
+    TurnipPrice: req.body.TurnipPrice,
     eventTime: req.body.eventTime,
-    chargeFee: req.body.chargeFee,
-    uid: req.user.id
+    Discord: req.body.Discord,
+    VisitorLimit: req.body.VisitorLimit,
+    QueueLimit: req.body.QueueLimit,
+    uid: 1
+    //uid: req.user.id                  //
   })
     .then(turnip => res.json(turnip))
     .catch(err => console.log(err))
