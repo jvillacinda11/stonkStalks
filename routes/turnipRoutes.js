@@ -22,8 +22,8 @@ router.get('/turnips/:id', passport.authenticate('jwt'), (req, res) => {
 })
 
 //POST one turnip
-//router.post('/turnips', passport.authenticate('jwt'), (req, res) => {
-router.post('/turnips', (req, res) => {
+router.post('/turnips', passport.authenticate('jwt'), (req, res) => {
+// router.post('/turnips', (req, res) => {
   Turnip.create({
     DodoCode: req.body.DodoCode,
     TurnipPrice: req.body.TurnipPrice,
@@ -31,8 +31,8 @@ router.post('/turnips', (req, res) => {
     Discord: req.body.Discord,
     VisitorLimit: req.body.VisitorLimit,
     QueueLimit: req.body.QueueLimit,
-    uid: 1
-    //uid: req.user.id                  //
+    // uid: 1
+    uid: req.user.id                  
   })
     .then(turnip => res.json(turnip))
     .catch(err => console.log(err))

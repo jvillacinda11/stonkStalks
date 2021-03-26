@@ -8,7 +8,7 @@ Turnip.init(
   {
     // define columns
     DodoCode: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false
     },
     TurnipPrice: {
