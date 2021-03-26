@@ -8,28 +8,41 @@
   font-display: swap;
 }
 
+div.container{
+  padding-top: px;
+  font-size: x-large;
+}
+
 .container {
   display: grid;
   text-align: center;
   padding: 10px;
-  border-radius: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
 }
 
 .nav-container {
   text-align: center;
+  font-size: x-large;
 }
 
 .col-6 {
   text-align: center;
+  font-size: x-large;
 }
 
 .container {
   text-align: center;
+  font-size: x-large;
 }
 
 body {
   font-family: 'Rubik', sans-serif;
-  background-color: powderblue;
+  background-color: #c5e8f4;
+}
+
+a:link {
+  /* color: rgb(146, 190, 255); */
 }
 
 h1 {
@@ -47,4 +60,34 @@ h2 {
 .container {
   font-family: FinkHeavy;
   font-size: x-large;
+}
+
+.button {
+  background-color: #097AEC;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+#search-btn-bar {
+  background-color: #7CB518;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+.navbar {
+  background-color: #342E37;
 }
