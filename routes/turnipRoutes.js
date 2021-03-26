@@ -31,8 +31,8 @@ router.post('/turnips', passport.authenticate('jwt'), (req, res) => {
     Discord: req.body.Discord,
     VisitorLimit: req.body.VisitorLimit,
     QueueLimit: req.body.QueueLimit,
-    // uid: 1
-    uid: req.user.id                  
+    uid: 1
+    // uid: req.user.id                  
   })
     .then(turnip => res.json(turnip))
     .catch(err => console.log(err))
