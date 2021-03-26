@@ -26,6 +26,10 @@ div.container{
   font-size: x-large;
 }
 
+.navbar-brand {
+  color:rgb(227, 227, 227)
+}
+
 .col-6 {
   text-align: center;
   font-size: x-large;
@@ -38,6 +42,8 @@ div.container{
 
 body {
   font-family: 'Rubik', sans-serif;
+  font-family: 'FinkHeavy';
+  font-size: x-large;
   background-color: #c5e8f4;
 }
 
@@ -73,6 +79,8 @@ h2 {
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 16px;
+  font-family: FinkHeavy;
+  font-size: x-large;
 }
 
 #search-btn-bar {
