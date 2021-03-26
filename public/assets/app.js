@@ -1,7 +1,7 @@
 
 const axios = window.axios
 
-const getturnips = () => {               //getturnips
+const getturnips = () => {        //getturnips
   axios.get('/api/turnips')       //turnips
     .then(({ data: turnips }) => {
       document.getElementById('turnips').innerHTML = ''      //div in html
@@ -25,7 +25,6 @@ const getturnips = () => {               //getturnips
 }
 
 document.getElementById('Save4').addEventListener('click', () => {
-  console.log('hiii')
   axios.post('/api/turnips', {            //turnips  
     DodoCode: document.getElementById('DodoCode').value,
     TurnipPrice: document.getElementById('TurnipPrice').value,

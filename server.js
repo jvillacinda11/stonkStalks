@@ -6,7 +6,6 @@ const sequelize = require('./config/connection.js')
 const passport = require('passport')
 
 require('./models') 
-const passport = require('passport')
 const { User } = require('./models')  
 
 const app = express()

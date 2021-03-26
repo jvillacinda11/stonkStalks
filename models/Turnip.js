@@ -20,7 +20,7 @@ Turnip.init(
       allowNull: false
     },
     Discord: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false
     },
     VisitorLimit: {
