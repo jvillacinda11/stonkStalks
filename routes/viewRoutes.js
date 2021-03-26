@@ -12,14 +12,17 @@ router.get('/register', (req, res) => {
   res.sendFile(join(__dirname, '..', 'public', 'register.html'))
 })
 
-// router.get('/loading', (req, res) => {
-//   res.sendFile(join(__dirname, '..', 'public', 'loading.html'))
-// })
+router.get('/loading', (req, res) => {
+  res.sendFile(join(__dirname, '..', 'public', 'loading.html'))
+})
 
 router.get('/host', (req, res) => {
   res.sendFile(join(__dirname, '..', 'public', 'host.html'))
 })
 
+router.get('/search', (req, res) => {
+  res.sendFile(join(__dirname, '..', 'public', 'search.html'))
+})
 
 router.get('*', (req, res) => {
   res.sendFile(join(__dirname, '..', 'public', 'index.html'))
