@@ -131,3 +131,11 @@ h2 {
 .navbar {
   background-color: #342E37;
 }
+
+.left {
+  text-align: left;
+}
+
+.right {
+  justify-content: right;
+}
