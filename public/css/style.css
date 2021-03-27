@@ -131,3 +131,7 @@ h2 {
 .navbar {
   background-color: #342E37;
 }
+
+#user-profile {
+  padding-top: 20px;
+}

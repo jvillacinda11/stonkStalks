@@ -18,26 +18,37 @@
 <body>
   
   <!-- NAV BAR -->
-  <div class="container nav-container">
-    <div class="nav-top">
-      <div>
-        <!-- FIX TO CHANGE TO REDIRECT TO INDEX -->
-        <a class="home" href="/" style="display: flex; margin-right: 10px;"> placeholder
-        </a>
+  <nav class="navbar navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <img src="./images/turnip.png" alt="turnip" width="30" height="24" class="d-inline-block align-text-top">
+        Stonk Stalks
+      </a>
+      <div id="no-account-nav">
+        <a class="loginPath" href="/login" style="margin-right: 10px;">Log In</a>
+        <button class="button">
+          <a class="signup" href="/register" style="color: white;">Sign Up</a>
+        </button>
       </div>
+  
+      <!-- IF USER IS LOGGED IN -->
+      <!-- <div id= "has-account-nav">
+                <button class="button">
+                  <a class="logout" href="/register" style="color: white;">Log Out</a>
+                </button>
+              </div> -->
+  
     </div>
-  </div>
+  </nav>
   
   <!-- BODY -->
-  <div>
+  <div id="user-profile">
     <div class="container-fluid-sm">
       <div class="profile-header">
         <div class="profile-img">
           <img src="./images/turnip.png" width="200px" alt="pfp">
         </div>
-      </div>
         
-        </div>
       </div>
     </div>
   </div>
