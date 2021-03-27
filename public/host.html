@@ -103,10 +103,10 @@
         <div id="FourthStep" class="col-6">
           <h6>Host Your Island:Step 4/4</h6>
           <label for="VisitorLimit">Visitor Limit:</label>
-          <input id= "VisitorLimit" type="VisitorLimit">
+          <input id= "VisitorLimit" type="text">
           <p>
             <label for="QueueLimit">Queue Limit:</label>
-            <input id="QueueLimit" type="QueueLimit">
+            <input id="QueueLimit" type="text">
           </p>
           <!-- <p id="secaligncheck">
             <label for="checkbox">Is Daisy Mae selling turnips?</label>
@@ -122,9 +122,10 @@
 
       </div>
       <!--Might remove later-->
-      <div class="col-md-6">
-        <ul class="list-group" id="turnips"></ul>
-      </div>
+      <!-- <div class="col-md-6"> -->
+        <!-- <ul class="list-group" id="turnips"></ul> -->
+        <div id="turnips"></div>
+      <!-- </div> -->
     <!--Might remove later-->
     </div>
   </div>
@@ -173,9 +174,10 @@
 
 
 
-    document.getElementById("Next4").onclick = function () {
+      document.getElementById("Next4").onclick = function () {
       document.getElementById("FourthStep").style.display = "none";
       document.getElementById("FirstStep").style.display = "block";
+     // document.getElementById("turnips").style.display = "block";
     }
 
 
