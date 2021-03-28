@@ -24,6 +24,10 @@ router.get('/search', (req, res) => {
   res.sendFile(join(__dirname, '..', 'public', 'search.html'))
 })
 
+router.get('/queue', (req, res) => {
+  res.sendFile(join(__dirname, '..', 'public', 'queue.html'))
+})
+
 router.get('*', (req, res) => {
   res.sendFile(join(__dirname, '..', 'public', 'index.html'))
 })
