@@ -88,6 +88,7 @@
 
           document.getElementById('search-btn-bar').addEventListener('click', event => {
             event.preventDefault()
+            document.getElementById('resDiv').innerHTML = ''
 
             if(document.getElementById('searchUsername').value !== '' && document.getElementById('searchIslandName').value === ''){//search-by-username
               let search = document.getElementById('searchUsername').value
@@ -98,14 +99,46 @@
                   axios.get(`/api/turnips1/${userTurnips}`)
                     .then(({ data }) => {
                       console.log(data)
-                      if (data.length === 0) console.log('No entries')
+                      if (data.length === 0) {
+                        console.log('No entries')
+                        document.getElementById('resDiv').innerHTML = `
+                  
+                         <br>
+                         <br>
+                         <h2>${search} has not opened any Island Events yet. :(</h2>
+                  
+                  `
+                      }
+                      for (let i = 0; i <= data.length; i++) {
+                        let price = data[i].TurnipPrice
+                        let visitorLimit = data[i].VisitorLimit
+                        let queueLimit = data[i].QueueLimit
+                        let eventTime = data[i].eventTime
+                        let resultEntry = document.createElement('li')
+                        resultEntry.className = 'list-group-item d-flex justify-content-between align-items-center searchEntry'
+                        resultEntry.innerHTML= `
+                        <br>
+          <p>Turnip Price: ${price}</p>
+          <p>Visitor Limit: ${visitorLimit}</p>
+          <p>Queue Limit: ${queueLimit}</p>
+          <p>Event Time: ${eventTime}</p>
+          <br>
+                                              `
+                        document.getElementById('resDiv').append(resultEntry)
+                      }
                     })
                     .catch(err => console.log(err))
 
                 })
                 .catch(err => {
                   console.log(err)
-                  console.log('No User by that name')
+                  document.getElementById('resDiv').innerHTML = `
+                  
+                  <br>
+                  <br>
+                  <h1>User not found</h1>
+                  
+                  `
                 })
             }
 
@@ -117,17 +150,49 @@
 
                   let userTurnips = data[0].id
                   axios.get(`/api/turnips1/${userTurnips}`)
-                   .then(({ data }) => {
-                    console.log(data)
-                   if(data.length === 0) console.log('no entries')
-                })
-                   .catch(err => console.log(err))
+                    .then(({ data }) => {
+                      console.log(data)
+                      if (data.length === 0) {
+                        console.log('No entries')
+                        document.getElementById('resDiv').innerHTML = `
+                  
+                         <br>
+                         <br>
+                         <h2>No open events for ${search}. :(</h2>
+                  
+                  `
+                      }
+                      for (let i = 0; i <= data.length; i++) {
+                        let price = data[i].TurnipPrice
+                        let visitorLimit = data[i].VisitorLimit
+                        let queueLimit = data[i].QueueLimit
+                        let eventTime = data[i].eventTime
+                        let resultEntry = document.createElement('li')
+                        resultEntry.className = 'list-group-item d-flex justify-content-between align-items-center searchEntry'
+                        resultEntry.innerHTML = `
+                        <br>
+          <p>Turnip Price: ${price}</p>
+          <p>Visitor Limit: ${visitorLimit}</p>
+          <p>Queue Limit: ${queueLimit}</p>
+          <p>Event Time: ${eventTime}</p>
+          <br>
+                                              `
+                        document.getElementById('resDiv').append(resultEntry)
+                      }
+                    })
+                    .catch(err => console.log(err))
 
-            })
-               .catch(err => {
-                 console.log(err)
-                 console.log('No Island by that name')
-            })
+                })
+                .catch(err => {
+                  console.log(err)
+                  document.getElementById('resDiv').innerHTML = `
+                  
+                  <br>
+                  <br>
+                  <h1>Island not found</h1>
+                  
+                  `
+                })
             }
 
             if(document.getElementById('searchUsername').value !== '' && document.getElementById('searchIslandName').value !== ''){
