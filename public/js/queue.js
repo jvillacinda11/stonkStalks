@@ -3,7 +3,7 @@ axios.get('/api/users/auth', {
     'Authorization': `Bearer ${localStorage.getItem('token')}`
   }
 })
-  .then(({ data: visitors }) => {
+  .then(({ data: {visitors} }) => {
     visitors.forEach(visitor => {
       addVisitor(visitor)
     })
