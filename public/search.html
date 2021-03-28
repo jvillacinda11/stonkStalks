@@ -55,7 +55,7 @@
     <form>
       <h6>Search by Username</h6>
       <div class="search-div">
-        <input class="search-text" type="text">
+        <input class="search-text" type="text" id="searchUsername">
         <ul class="usernameList"></ul>
       </div>
       <hr>
@@ -63,11 +63,12 @@
       <hr>
       <h6>Search by Island Name</h6>
       <div class="search-div">
-      <input class="search-text" type="text">
-      <ul class="islandList"></ul>
+      <input class="search-text" type="text" id="searchIslandName">
+      <br>
     </div>
     <button id="search-btn-bar">Search</button>
   </form>
+  <ul class="islandList" id="resDiv"></ul>
 </div>
 </div>
   
@@ -81,6 +82,61 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+
+          document.getElementById('search-btn-bar').addEventListener('click', event => {
+            event.preventDefault()
+
+            if(document.getElementById('searchUsername').value !== '' && document.getElementById('searchIslandName').value === ''){//search-by-username
+              let search = document.getElementById('searchUsername').value
+              axios.get(`/api/users/${search}`)
+                .then(({ data }) => {
+
+                  let userTurnips = data[0].id
+                  axios.get(`/api/turnips1/${userTurnips}`)
+                    .then(({ data }) => {
+                      console.log(data)
+                      if (data.length === 0) console.log('No entries')
+                    })
+                    .catch(err => console.log(err))
+
+                })
+                .catch(err => {
+                  console.log(err)
+                  console.log('No User by that name')
+                })
+            }
+
+            if(document.getElementById('searchUsername').value === '' && document.getElementById('searchIslandName').value !== ''){//search-by-islandName
+
+              let search = document.getElementById('searchIslandName').value
+              axios.get(`/api/users1/${search}`)
+                .then(({ data }) => {
+
+                  let userTurnips = data[0].id
+                  axios.get(`/api/turnips1/${userTurnips}`)
+                   .then(({ data }) => {
+                    console.log(data)
+                   if(data.length === 0) console.log('no entries')
+                })
+                   .catch(err => console.log(err))
+
+            })
+               .catch(err => {
+                 console.log(err)
+                 console.log('No Island by that name')
+            })
+            }
+
+            if(document.getElementById('searchUsername').value !== '' && document.getElementById('searchIslandName').value !== ''){
+              alert('Only search by one. Please empty one field!')
+            }
+
+          })
+        
+    </script>
 </body>
 
 </html>
