@@ -8,7 +8,7 @@ axios.get('/api/users/auth', {
       addVisitor(visitor)
     })
   })
-  .catch(err => console.log(err))
+  .catch(err => window.location = '/login')
 
 document.getElementById('addVisitorBtn').addEventListener('click', event => {
   event.preventDefault()
@@ -45,7 +45,7 @@ const addVisitor = visitor => {
 
   const removeVisitorBtn = document.createElement("button")
   removeVisitorBtn.type = "submit"
-  removeVisitorBtn.classList = "secondary-success"
+  removeVisitorBtn.classList = "btn btn-success"
   removeVisitorBtn.textContent = "Remove"
   removeVisitorBtn.dataset.id = visitor.id
 

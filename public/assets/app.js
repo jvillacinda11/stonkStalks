@@ -1,6 +1,16 @@
 
 const axios = window.axios
 
+axios.get('/api/users/auth', {
+  headers: {
+    'Authorization': `Bearer ${localStorage.getItem('token')}`
+  }
+})
+  .then(({ data: visitors }) => {
+    
+  })
+  .catch(err => window.location = '/login')
+
 const getturnips = () => {        //getturnips
   axios.get('/api/turnips')       //turnips
     .then(({ data: turnips }) => {
@@ -44,7 +54,7 @@ document.getElementById('Save4').addEventListener('click', () => {
           <p>VisitorLimit: ${turnip.VisitorLimit}</p>
           <p>QueueLimit: ${turnip.QueueLimit}</p>
           `
-          
+
           
       document.getElementById('turnips').append(turnipElem)    //turnips
       document.getElementById('DodoCode').value = ''
