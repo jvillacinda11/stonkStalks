@@ -7,7 +7,7 @@ const passport = require('passport')
 const { Strategy: JWTStrategy, ExtractJwt } = require('passport-jwt')
 
 require('./models') 
-const { User, Visitor } = require('./models')  
+const { User, Visitor, Turnip } = require('./models')  
 
 const app = express()
 
@@ -25,7 +25,7 @@ passport.deserializeUser(User.deserializeUser())
 passport.use(new JWTStrategy({
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
   secretOrKey: process.env.SECRET
-}, ({ id }, cb) => User.findOne({ where: { id }, include: [Visitor] })
+}, ({ id }, cb) => User.findOne({ where: { id }, include: [Visitor, Turnip] })
   .then(user => cb(null, user))
   .catch(err => cb(err))))
 
