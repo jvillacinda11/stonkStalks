@@ -131,6 +131,11 @@ h2 {
 .navbar {
   background-color: #342E37;
 }
+.searchEntry{
+
+  margin-top: 0.5em;
+  
+}
 
 .left {
   text-align: left;
