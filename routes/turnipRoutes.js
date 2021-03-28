@@ -15,14 +15,14 @@ router.get('/turnips', passport.authenticate('jwt'), (req, res) => {
 })
 
 //GET one turnips (SHWETA'S CODE IN MAIN IT'S NOT COMMENTED OUT)
-// router.get('/turnips/:id', passport.authenticate('jwt'), (req, res) => {
-//   Turnip.findOne({ where: { id: req.params.id } })
-//     .then(item => res.json(turnip))
-//     .catch(err => console.log(err))
-// })
+router.get('/turnips/:id', passport.authenticate('jwt'), (req, res) => {
+  Turnip.findOne({ where: { id: req.params.id } })
+    .then(item => res.json(turnip))
+    .catch(err => console.log(err))
+})
 
 //JOSE'S CODE: ROUTE FOR THE SEARCH FUNCTION LOGIN NOT REQUIRED
-router.get('/turnips/:uid', (req, res) => {
+router.get('/turnips1/:uid', (req, res) => {
   Turnip.findAll({where: {uid: req.params.uid}})
   .then(turnips => res.json(turnips))
   .catch(err => console.log(err))
