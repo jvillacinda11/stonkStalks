@@ -3,12 +3,15 @@ axios.get('/api/users/auth', {
     'Authorization': `Bearer ${localStorage.getItem('token')}`
   }
 })
-  .then(({ data: visitors }) => {
+  .then(({ data: { visitors }}) => {
     visitors.forEach(visitor => {
       addVisitor(visitor)
     })
   })
-  .catch(err => window.location = '/login')
+  .catch(err => {
+    console.log(err)
+    window.location = '/login'
+  })
 
 document.getElementById('addVisitorBtn').addEventListener('click', event => {
   event.preventDefault()

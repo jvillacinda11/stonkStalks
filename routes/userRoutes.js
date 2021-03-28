@@ -4,7 +4,7 @@ const passport = require('passport')
 const jwt = require('jsonwebtoken')
 
 router.get('/users/auth', passport.authenticate('jwt'), (req, res) => {
-  res.json(req.user.visitors)
+  res.json(req.user)
 })
 
 router.post('/users/register', (req, res) => {
