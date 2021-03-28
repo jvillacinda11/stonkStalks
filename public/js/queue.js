@@ -8,7 +8,10 @@ axios.get('/api/users/auth', {
       addVisitor(visitor)
     })
   })
-  .catch(err => window.location = '/login')
+  .catch(err => {
+    console.log(err)
+    window.location = '/login'
+  })
 
 document.getElementById('addVisitorBtn').addEventListener('click', event => {
   event.preventDefault()

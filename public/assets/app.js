@@ -56,9 +56,20 @@ document.getElementById('Save4').addEventListener('click', () => {
           <p>VisitorLimit: ${turnip.VisitorLimit}</p>
           <p>QueueLimit: ${turnip.QueueLimit}</p>
           `
+      const queueBtn = document.createElement('button')
+      queueBtn.classList = "btn btn-primary"
+      queueBtn.type = "submit"
+      queueBtn.innerHTML = 'Move to Queue'
 
+      queueBtn.addEventListener('click', () => {
+        axios.get('/api/users/auth')
+
+        window.location = '/queue'
+      })
           
-      document.getElementById('turnips').append(turnipElem)   
+      document.getElementById('turnips').append(turnipElem)
+      document.getElementById('turnips').append(queueBtn)
+      
       document.getElementById('DodoCode').value = ''
       document.getElementById('TurnipPrice').value = ''
       document.getElementById('eventTime').value = ''

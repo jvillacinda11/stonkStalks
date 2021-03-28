@@ -5,9 +5,7 @@ const { join } = require('path')
 const sequelize = require('./config/connection.js') 
 const passport = require('passport')
 const { Strategy: JWTStrategy, ExtractJwt } = require('passport-jwt')
-
-require('./models') 
-const { User, Visitor, Turnip } = require('./models')  
+const { User, Turnip, Visitor } = require('./models')  
 
 const app = express()
 
