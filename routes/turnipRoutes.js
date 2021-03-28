@@ -14,11 +14,18 @@ router.get('/turnips', passport.authenticate('jwt'), (req, res) => {
     .catch(err => console.log(err))
 })
 
-//GET one turnips
-router.get('/turnips/:id', passport.authenticate('jwt'), (req, res) => {
-  Turnip.findOne({ where: { id: req.params.id } })
-    .then(item => res.json(turnip))
-    .catch(err => console.log(err))
+//GET one turnips (SHWETA'S CODE IN MAIN IT'S NOT COMMENTED OUT)
+// router.get('/turnips/:id', passport.authenticate('jwt'), (req, res) => {
+//   Turnip.findOne({ where: { id: req.params.id } })
+//     .then(item => res.json(turnip))
+//     .catch(err => console.log(err))
+// })
+
+//JOSE'S CODE: ROUTE FOR THE SEARCH FUNCTION LOGIN NOT REQUIRED
+router.get('/turnips/:uid', (req, res) => {
+  Turnip.findAll({where: {uid: req.params.uid}})
+  .then(turnips => res.json(turnips))
+  .catch(err => console.log(err))
 })
 
 //POST one turnip
@@ -31,8 +38,8 @@ router.post('/turnips', passport.authenticate('jwt'), (req, res) => {
     Discord: req.body.Discord,
     VisitorLimit: req.body.VisitorLimit,
     QueueLimit: req.body.QueueLimit,
-    uid: 1
-    // uid: req.user.id                  
+    // uid: 1
+    uid: req.user.id                  
   })
     .then(turnip => res.json(turnip))
     .catch(err => console.log(err))

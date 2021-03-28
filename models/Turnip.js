@@ -16,7 +16,7 @@ Turnip.init(
       allowNull: false
     },
     eventTime: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: false
     },
     Discord: {
