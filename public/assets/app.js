@@ -1,11 +1,21 @@
 
 const axios = window.axios
 
+axios.get('/api/users/auth', {
+  headers: {
+    'Authorization': `Bearer ${localStorage.getItem('token')}`
+  }
+})
+  .then(({ data: visitors }) => {
+    
+  })
+  .catch(err => window.location = '/login')
+
 const getturnips = () => {        //getturnips
   axios.get('/api/turnips')       //turnips
     .then(({ data: turnips }) => {
-      document.getElementById('turnips').innerHTML = ''      //div in html
-      turnips.forEach(turnip => {                     //turnips
+      document.getElementById('turnips').innerHTML = ''      
+      turnips.forEach(turnip => {                     
         const turnipElem = document.createElement('li')
         turnipElem.className = 'list-group-item d-flex justify-content-between align-items-center'
         turnipElem.innerHTML =
@@ -18,21 +28,23 @@ const getturnips = () => {        //getturnips
           `
           
           
-        document.getElementById('turnips').append(turnipElem)   //turnips
+        document.getElementById('turnips').append(turnipElem)   
       })
     })
     .catch(err => console.error(err))
 }
 
 document.getElementById('Save4').addEventListener('click', () => {
-  axios.post('/api/turnips', {            //turnips  
+  axios.post('/api/turnips', {             
     DodoCode: document.getElementById('DodoCode').value,
     TurnipPrice: document.getElementById('TurnipPrice').value,
     eventTime: document.getElementById('eventTime').value,
     Discord: document.getElementById('Discord').value,
     VisitorLimit: document.getElementById('VisitorLimit').value,
     QueueLimit: document.getElementById('QueueLimit').value
-  })
+  },{
+    headers: {"Authorization": `Bearer ${localStorage.getItem('token')}`}
+  } )
     .then(({ data: turnip }) => {
       const turnipElem = document.createElement('li')
       turnipElem.className = 'list-group-item d-flex justify-content-between align-items-center'
@@ -44,9 +56,20 @@ document.getElementById('Save4').addEventListener('click', () => {
           <p>VisitorLimit: ${turnip.VisitorLimit}</p>
           <p>QueueLimit: ${turnip.QueueLimit}</p>
           `
+      const queueBtn = document.createElement('button')
+      queueBtn.classList = "btn btn-primary"
+      queueBtn.type = "submit"
+      queueBtn.innerHTML = 'Move to Queue'
+
+      queueBtn.addEventListener('click', () => {
+        axios.get('/api/users/auth')
+
+        window.location = '/queue'
+      })
           
-          
-      document.getElementById('turnips').append(turnipElem)    //turnips
+      document.getElementById('turnips').append(turnipElem)
+      document.getElementById('turnips').append(queueBtn)
+      
       document.getElementById('DodoCode').value = ''
       document.getElementById('TurnipPrice').value = ''
       document.getElementById('eventTime').value = ''
@@ -56,14 +79,62 @@ document.getElementById('Save4').addEventListener('click', () => {
     })
     .catch(err => console.error(err))
 
-  // const fs = require('fs')
-  // let addstep1 = {
-  //   Dodocode: document.getElementById('DodoCode').value
-
-  // }
-
-  // fs.writeFile('engineer.json', JSON.stringify(addstep1), err => {
-  //   if (err) { console.log(err) }
-  // })
 
 })
+
+
+//------------------------------------------------
+
+// document.getElementById('Save4').addEventListener('click', event => {
+ 
+//   let turnip = {
+   
+      
+//     DodoCode: document.getElementById('DodoCode').value,
+//     TurnipPrice: document.getElementById('TurnipPrice').value,
+//      eventTime: document.getElementById('eventTime').value,
+//      Discord: document.getElementById('Discord').value,
+//      VisitorLimit: document.getElementById('VisitorLimit').value,
+//      QueueLimit: document.getElementById('QueueLimit').value
+//   }
+//   axios.post('/api/turnips', turnip, {
+//     headers: {
+//       'Authorization': `Bearer ${localStorage.getItem('token')}`
+//     }
+//   })
+//     .then(({ data: turnip }) => {
+//       console.log(turnip)
+//       const turnipElem = document.createElement('li')
+//       turnipElem.innerHTML = `
+//           <p>DodoCode: ${turnip.DodoCode}</p>
+//           <p>TurnipPrice: ${turnip.TurnipPrice}</p>
+//           <p>eventTime: ${turnip.eventTime}</p>
+//           <p>Discord: ${turnip.Discord}</p>
+//           <p>VisitorLimit: ${turnip.VisitorLimit}</p>
+//           <p>QueueLimit: ${turnip.QueueLimit}</p>
+//           `
+//       document.getElementById('turnips').append(turnipElem)
+//     })
+// })
+
+// axios.get('/api/users/auth', {
+//   headers: {
+//     'Authorization': `Bearer ${localStorage.getItem('token')}`
+//   }
+// })
+//   .then(({ data: turnips }) => {
+//     console.log(turnips)
+//     turnips.forEach(turnip => {
+//       const turnipElem = document.createElement('li')
+//       turnipElem.innerHTML = `
+//           <p>DodoCode: ${turnip.DodoCode}</p>
+//           <p>TurnipPrice: ${turnip.TurnipPrice}</p>
+//           <p>eventTime: ${turnip.eventTime}</p>
+//           <p>Discord: ${turnip.Discord}</p>
+//           <p>VisitorLimit: ${turnip.VisitorLimit}</p>
+//           <p>QueueLimit: ${turnip.QueueLimit}</p>
+//           `
+//       document.getElementById('turnips').append(turnipElem)
+//     })
+//   })
+//   .catch(err => window.location = '/login.html')

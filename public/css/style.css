@@ -130,7 +130,9 @@ h2 {
 
 /* .navbar {
   background-color: #342E37;
-} */
+} 
+
+*/
 
 #user-profile {
   padding-top: 20px;
@@ -221,4 +223,16 @@ a:hover{
   height: 2px;
   position:absolute;
   width:18px;
+}
+
+.searchEntry{
+  margin-top: 0.5em; 
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
 }

@@ -60,11 +60,11 @@
         </div>
         <div class="input-row login-input">
           <div class="input-label">Your Villager's Name</div>
-          <input id="villager_name" type="input-label" name="villager_name" value>
+          <input id="villagerName" type="input-label" name="villagerName" value>
         </div>
         <div class="input-row login-input">
           <div class="input-label">Island Name</div>
-          <input id="island_name" type="input-label" name="island_name" value>
+          <input id="islandName" type="input-label" name="islandName" value>
         </div>
         <div class="input-row login-input">
           <div class="input-label">Email</div>
@@ -72,7 +72,7 @@
         </div>
         <div class="input-row login-input">
           <div class="input-label">Friend Code</div>
-          <input id="friend_code" placeholder="ex. XXXX-XXXX-XXXX" type="text" name="friend-code" value>
+          <input id="friendCode" placeholder="ex. XXXX-XXXX-XXXX" type="text" name="friend-code" value>
         </div>
         <p></p>
         <div class="login-btn-bar">
@@ -92,32 +92,35 @@
  
   
  const validate = () => {
+   let username = document.getElementById('username').value
+   let password = document.getElementById('password').value
+   let password2 = document.getElementById('password2').value
+   let villagerName = document.getElementById('villagerName').value
+   let islandName = document.getElementById('islandName').value
+   let email = document.getElementById('email').value
+   let friendCode = document.getElementById('friendCode').value
+   let birthday = document.getElementById('birthday').value
 
-
-    if (username == '' || password == '' || password2 == '' || villager_name == '' || island_name == '' || email == '' || friend_code == '' || birthday == ''){
+    if (username === '' || password === '' || villagerName === '' || islandName === '' || email === '' || friendCode === '' || birthday === ''){
       alert('Please fill out all fields!')
 
     
   } 
   else{
        if (document.getElementById('password').value === document.getElementById('password2').value) {
-
-       alert('Success!')
-
-
+          console.log('ping')
        axios.post('/api/users/register', {
-         villagerName: document.getElementById('villager_name').value,         
+         villagerName: document.getElementById('villagerName').value,         
          email: document.getElementById('email').value,
          password: document.getElementById('password').value,
          birthday: document.getElementById('birthday').value,
-         islandName: document.getElementById('island_name').value,      
-         friendCode: document.getElementById('friend_code').value,                     
+         islandName: document.getElementById('islandName').value,      
+         friendCode: document.getElementById('friendCode').value,                     
          isOpen: true,         
          username: document.getElementById('username').value
 
        })
-         .then(data => {
-           console.log(data)
+         .then(() => {
            window.location = '/login'
         })
          .catch(err => console.error(err))
@@ -133,10 +136,10 @@
         let username = document.getElementById('username').value
         let password = document.getElementById('password').value
         let password2 = document.getElementById('password2').value
-        let villager_name = document.getElementById('villager_name').value
-        let island_name = document.getElementById('island_name').value
+        let villagerName = document.getElementById('villagerName').value
+        let islandName = document.getElementById('islandName').value
         let email =  document.getElementById('email').value
-        let friend_code = document.getElementById('friend_code').value
+        let friendCode = document.getElementById('friendCode').value
         let birthday = document.getElementById('birthday').value
         validate()
       })

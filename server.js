@@ -4,9 +4,8 @@ const express = require('express')
 const { join } = require('path')     
 const sequelize = require('./config/connection.js') 
 const passport = require('passport')
-
-require('./models') 
-const { User } = require('./models')  
+const { Strategy: JWTStrategy, ExtractJwt } = require('passport-jwt')
+const { User, Turnip, Visitor } = require('./models')  
 
 const app = express()
 
@@ -20,6 +19,13 @@ app.use(passport.session())
 passport.use(User.createStrategy())
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
+
+passport.use(new JWTStrategy({
+  jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+  secretOrKey: process.env.SECRET
+}, ({ id }, cb) => User.findOne({ where: { id }, include: [Visitor, Turnip] })
+  .then(user => cb(null, user))
+  .catch(err => cb(err))))
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))

@@ -5,7 +5,6 @@ document.getElementById('login').addEventListener('click', event => {
     password: document.getElementById('password').value
   })
     .then(({ data: token }) => {
-      console.log(token)
       if (token) {
         localStorage.setItem('token', token)
         window.location = '/'
