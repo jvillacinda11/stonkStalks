@@ -21,7 +21,7 @@ document.getElementById('addVisitorBtn').addEventListener('click', event => {
 
   axios.post('/api/visitors', {
     name: name
-  }, {
+    }, {
     headers: {
       'Authorization': `Bearer ${localStorage.getItem('token')}`
     }

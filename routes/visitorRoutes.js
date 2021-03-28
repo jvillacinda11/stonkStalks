@@ -15,6 +15,15 @@ router.post('/visitors', passport.authenticate('jwt'), (req, res) => {
     .catch(err => console.log(err))
 })
 
+router.post('/visitors/:id', passport.authenticate('jwt'), (req, res) => {
+  Visitor.create({
+    name: req.user.username,
+    uid: req.params.id
+  })
+    .then(item => res.json(item))
+    .catch(err => console.log(err))
+})
+
 router.delete('/visitors/:id', passport.authenticate('jwt'), (req, res) => {
   Visitor.destroy({ where: { id: req.params.id } })
     .then(() => res.sendStatus(200))

@@ -94,11 +94,10 @@
               let search = document.getElementById('searchUsername').value
               axios.get(`/api/users/${search}`)
                 .then(({ data }) => {
-
+                  
                   let userTurnips = data[0].id
                   axios.get(`/api/turnips1/${userTurnips}`)
                     .then(({ data }) => {
-                      console.log(data)
                       if (data.length === 0) {
                         console.log('No entries')
                         document.getElementById('resDiv').innerHTML = `
@@ -124,6 +123,22 @@
           <p>Event Time: ${eventTime}</p>
           <br>
                                               `
+                        const joinQueueBtn = document.createElement("button")
+                        joinQueueBtn.textContent = "Join Queue"
+                        joinQueueBtn.classList = "btn btn-success"
+
+                        joinQueueBtn.addEventListener('click', () => {
+                          axios.post(`/api/visitors/${userTurnips}`, { }, {
+                            headers: {
+                              'Authorization': `Bearer ${localStorage.getItem('token')}`
+                            }
+                          })
+                            .then(res => console.log(res))
+                            .catch(err => console.log(err))
+                        })
+
+                        resultEntry.append(joinQueueBtn)
+
                         document.getElementById('resDiv').append(resultEntry)
                       }
                     })
@@ -177,6 +192,13 @@
           <p>Event Time: ${eventTime}</p>
           <br>
                                               `
+
+                        const joinQueueBtn = document.createElement("button")
+                        joinQueueBtn.textContent = "Join Queue"
+                        joinQueueBtn.classList = "btn btn-success"
+
+                        resultEntry.append(joinQueueBtn)
+                                              
                         document.getElementById('resDiv').append(resultEntry)
                       }
                     })
