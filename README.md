@@ -12,9 +12,6 @@
 ## Installation
 *Steps required to install project and how to get the development environment running:*
 Application is currently deployed onto [Heroku](https://limitless-fortress-65893.herokuapp.com/).
-## Usage
-
-![alt screenshot]()
 
 ## Credits
 ...
