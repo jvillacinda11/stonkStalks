@@ -127,6 +127,18 @@ h2 {
   cursor: pointer;
   border-radius: 16px;
 }
+#login {
+  background-color: #7CB518;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
 
 /* .navbar {
   background-color: #342E37;
