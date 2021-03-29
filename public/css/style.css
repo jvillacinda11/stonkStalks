@@ -100,7 +100,7 @@ h2 {
   margin-right: 63px;
 }
 
-.button {
+.nav-button {
   background-color: #097AEC;
   border: none;
   color: black;
@@ -112,7 +112,7 @@ h2 {
   cursor: pointer;
   border-radius: 16px;
   font-family: FinkHeavy;
-  font-size: x-large;
+  font-size: large;
 }
 
 #search-btn-bar {
@@ -264,4 +264,14 @@ a:hover{
 h5 a{
   color: #097aec;
   text-decoration: underline;
+}
+
+.hm-gradient {
+    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+}
+.navbar .dropdown-menu a:hover {
+    color: #616161 !important;
+}
+.darken-grey-text {
+    color: #2E2E2E;
 }
