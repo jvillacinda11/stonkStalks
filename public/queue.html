@@ -11,28 +11,27 @@
 </head>
 <body>
   <!-- NAV BAR -->
-  <nav class="navbar navbar-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/">
-        <img src="./images/turnip.png" alt="turnip" width="30" height="24" class="d-inline-block align-text-top">
-        Stonk Stalks
-      </a>
-      <div id="no-account-nav">
-        <a class="loginPath" href="/login" style="margin-right: 10px;">Log In</a>
-        <button class="button">
-          <a class="signup" href="/register" style="color: white;">Sign Up</a>
-        </button>
-      </div>
-  
-      <!-- IF USER IS LOGGED IN -->
-      <!-- <div id= "has-account-nav">
-                <button class="button">
-                  <a class="logout" href="/register" style="color: white;">Log Out</a>
-                </button>
-              </div> -->
-  
-    </div>
-  </nav>
+            <nav class="mb-4 navbar navbar-expand-lg navbar-dark">
+              <a class="navbar-brand font-bold" href="#"><img src="./images/turnip.png" alt="turnip" width="30" height="24"
+                  class="d-inline-block align-text-top">Stonk Stalks</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+                aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false"><i class="fa fa-user"></i> Profile </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-cyan" aria-labelledby="navbarDropdownMenuLink-4">
+                      <a class="dropdown-item" href="#">My account</a>
+                      <a class="dropdown-item" href="/login">Log in</a>
+                      <a class="dropdown-item" href="/logout">Log out</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </nav>
   <!-- BODY -->
   <div class="container">
     <h1>Island Queue</h1>
