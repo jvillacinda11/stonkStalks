@@ -43,9 +43,9 @@ body {
   background-color: #c5e8f4;
 }
 
-a:link {
+/* a:link {
   color: rgb(146, 190, 255);
-}
+} */
 
 h1 {
   font-family: FinkHeavy;
@@ -128,6 +128,18 @@ h2 {
   border-radius: 16px;
 }
 #login {
+  background-color: #7CB518;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+#register {
   background-color: #7CB518;
   border: none;
   color: black;
@@ -247,4 +259,9 @@ a:hover{
 
 .right {
   text-align: right;
+}
+
+h5 a{
+  color: #097aec;
+  text-decoration: underline;
 }
